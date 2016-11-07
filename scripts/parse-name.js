@@ -6,7 +6,12 @@ const last           = require('lodash/last'),
 function parseName (rawName) {
   const words = rawName.split(' ');
 
-  if (rawName.length === 0 || words.length === 0 || words.length > 3) {
+  if (
+       rawName.length === 0
+    || /\d/.test(rawName)
+    || words.length > 3
+    || words.length > 3
+  ) {
     throw new Error('Invalid fullname');
   } else {
     const firstname  = words.length > 1
