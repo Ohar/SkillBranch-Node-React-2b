@@ -6,7 +6,9 @@ const last           = require('lodash/last'),
       logger         = log4js.getLogger('parseName');
 
 function parseName (rawName) {
-  const words      = rawName.replace(/ +/g, ' ').split(' '),
+  const words      = rawName.trim()
+                            .replace(/ +/g, ' ')
+                            .split(' '),
         nameRegexp = /^[^-_\/\d]+$/;
 
   if (
