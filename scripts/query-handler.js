@@ -10,9 +10,17 @@ function queryHandler (req, res) {
           result = getShortname(name);
 
     return res.send(String(result));
-
   } catch (e) {
-    return res.sendStatus(400);
+    switch (e.message) {
+      case 'Invalid fullname':
+        res.status(400)
+           .send(e.message);
+        break;
+      default:
+        console.error('Fail', e, e.message);
+        res.sendStatus(500);
+        break;
+    }
   }
 }
 

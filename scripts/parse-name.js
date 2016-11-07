@@ -6,8 +6,8 @@ const last           = require('lodash/last'),
 function parseName (rawName) {
   const words = rawName.split(' ');
 
-  if (words.length === 0 || words.length > 3) {
-    return new Error('Invalid fullname');
+  if (rawName.length === 0 || words.length === 0 || words.length > 3) {
+    throw new Error('Invalid fullname');
   } else {
     const firstname  = words.length > 1
             ? upperCaseFirst(words[0])
@@ -18,7 +18,6 @@ function parseName (rawName) {
           lastname   = upperCaseFirst(last(words));
 
     return {firstname, patronymic, lastname};
-
   }
 }
 

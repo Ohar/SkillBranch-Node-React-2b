@@ -129,13 +129,19 @@ describe(
           'Некорректные имена', () => {
             it(
               '4 слова', () => {
-                expect(parseName(names.invalid.fourWords)).to.be.an('error');
+                assert.throws(() => {parseName(names.invalid.fourWords)}, 'Invalid fullname');
+              }
+            );
+
+            it(
+              'four', () => {
+                assert.throws(() => {parseName(names.invalid.four)}, 'Invalid fullname');
               }
             );
 
             it(
               'Пустая строка', () => {
-                expect(parseName(names.invalid.fourWords)).to.be.an('error');
+                assert.throws(() => {parseName(names.invalid.empty)}, 'Invalid fullname');
               }
             );
           }

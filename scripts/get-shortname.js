@@ -20,7 +20,7 @@ function getShortname (name) {
 
     return shortname;
   } catch (e) {
-    return e;
+    throw e;
   }
 }
 
