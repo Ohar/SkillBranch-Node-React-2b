@@ -7,7 +7,7 @@ const last           = require('lodash/last'),
 
 function parseName (rawName) {
   const words      = rawName.split(' '),
-        nameRegexp = /^[A-Za-z ]+$/;
+        nameRegexp = /^[A-Za-zА-Яа-я ]+$/;
 
   if (
     !nameRegexp.test(rawName)
