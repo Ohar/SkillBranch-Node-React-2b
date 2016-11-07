@@ -1,0 +1,28 @@
+{
+  "name": "skillbranch-hode-react-2b",
+  "version": "1.0.0",
+  "description": "Перевести полное `Имя Отчество Фамилия` в `Фамилия И. О.`",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ohar/SkillBranch-Node-React-2b.git"
+  },
+  "author": "Pavel Lysenko aka Ohar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ohar/SkillBranch-Node-React-2b/issues"
+  },
+  "homepage": "https://github.com/Ohar/SkillBranch-Node-React-2b#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "lodash": "^4.16.6",
+    "upper-case-first": "^1.1.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
