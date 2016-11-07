@@ -9,12 +9,10 @@ function queryHandler (req, res) {
           name   = parseName(query.fullname),
           result = getShortname(name);
 
-    return res.set('Access-Control-Allow-Origin', '*')
-              .send(String(result));
+    return res.send(String(result));
 
   } catch (e) {
-    return res.set('Access-Control-Allow-Origin', '*')
-              .sendStatus(400);
+    return res.sendStatus(400);
   }
 }
 
