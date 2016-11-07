@@ -4,12 +4,11 @@ const last           = require('lodash/last'),
       upperCaseFirst = require('upper-case-first');
 
 function parseName (rawName) {
-  const words = rawName.split(' ');
+  const words      = rawName.split(' '),
+        nameRegexp = /^[A-Za-z ]+$/;
 
   if (
-       rawName.length === 0
-    || /\d/.test(rawName)
-    || /_/.test(rawName)
+    !nameRegexp.test(rawName)
     || words.length > 3
     || words.length > 3
   ) {
