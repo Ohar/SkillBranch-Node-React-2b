@@ -8,8 +8,8 @@ const chai      = require('chai'),
 const names = {
   valid  : {
     onlyLastname                      : 'Test',
-    firstNameWithLastname             : 'Test1 Test2',
-    firstNameWithLastnameAndPatronymic: 'Test1 Test2 Test3',
+    firstNameWithLastname             : 'Test Test',
+    firstNameWithLastnameAndPatronymic: 'Test Test Test',
     jobs                              : 'Steven Paul Jobs',
     segalovich                        : 'Илья Валентинович Сегалович',
     tinna                             : 'Tinna Gunnlaugsdóttir',
@@ -54,9 +54,9 @@ describe(
             it(
               'Имя Фамилия', () => {
                 const expected = {
-                  firstname : 'Test1',
+                  firstname : 'Test',
                   patronymic: null,
-                  lastname  : 'Test2'
+                  lastname  : 'Test'
                 };
 
                 assert.deepEqual(parseName(names.valid.firstNameWithLastname), expected);
@@ -66,9 +66,9 @@ describe(
             it(
               'Имя Отчество Фамилия', () => {
                 const expected = {
-                  firstname : 'Test1',
-                  patronymic: 'Test2',
-                  lastname  : 'Test3'
+                  firstname : 'Test',
+                  patronymic: 'Test',
+                  lastname  : 'Test'
                 };
 
                 assert.deepEqual(parseName(names.valid.firstNameWithLastnameAndPatronymic), expected);
