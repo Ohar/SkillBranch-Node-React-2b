@@ -21,12 +21,12 @@ function parseName (rawName) {
     throw new Error('Invalid fullname');
   } else {
     const firstname  = words.length > 1
-            ? upperCaseFirst(words[0])
+            ? upperCaseFirst(words[0].toLowerCase())
             : null,
           patronymic = words.length === 3
-            ? upperCaseFirst(words[1])
+            ? upperCaseFirst(words[1].toLowerCase())
             : null,
-          lastname   = upperCaseFirst(last(words));
+          lastname   = upperCaseFirst(last(words).toLowerCase());
 
     return {firstname, patronymic, lastname};
   }
