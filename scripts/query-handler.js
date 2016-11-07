@@ -14,7 +14,6 @@ function queryHandler (req, res) {
     return res.send(String(result));
   } catch (e) {
     logger.error('Fail', e);
-    logger.debug('req', req);
 
     switch (e.message) {
       case 'Invalid fullname':
