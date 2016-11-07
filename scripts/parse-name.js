@@ -11,7 +11,7 @@ function parseName (rawName) {
 
   if (
     !nameRegexp.test(rawName)
-    || words.length > 3
+    || words.length === 0
     || words.length > 3
   ) {
     logger.error('Fail');
