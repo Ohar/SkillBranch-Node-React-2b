@@ -9,6 +9,7 @@ function parseName (rawName) {
   if (
        rawName.length === 0
     || /\d/.test(rawName)
+    || /_/.test(rawName)
     || words.length > 3
     || words.length > 3
   ) {
