@@ -1,7 +1,9 @@
 'use strict';
 
 const parseName    = require('./parse-name'),
-      getShortname = require('./get-shortname');
+      getShortname = require('./get-shortname'),
+      log4js         = require('log4js'),
+      logger         = log4js.getLogger('queryHandler');
 
 function queryHandler (req, res) {
   try {
@@ -11,12 +13,14 @@ function queryHandler (req, res) {
 
     return res.send(String(result));
   } catch (e) {
+    logger.error('Fail', e);
+    logger.debug('fullname', query && query.fullname);
+
     switch (e.message) {
       case 'Invalid fullname':
         res.send(e.message);
         break;
       default:
-        console.error('Fail', e, e.message);
         res.sendStatus(500);
         break;
     }

@@ -1,7 +1,9 @@
 'use strict';
 
 const compact    = require('lodash/compact'),
-      getInitial = require('./get-initial');
+      getInitial = require('./get-initial'),
+      log4js     = require('log4js'),
+      logger     = log4js.getLogger('getShortname');
 
 function getShortname (name) {
   try {
@@ -20,6 +22,8 @@ function getShortname (name) {
 
     return shortname;
   } catch (e) {
+    logger.error('Fail', e);
+    logger.debug('name', name);
     throw e;
   }
 }

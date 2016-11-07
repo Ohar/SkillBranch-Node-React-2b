@@ -1,7 +1,10 @@
 'use strict';
 
+const log4js = require('log4js'),
+      logger = log4js.getLogger('queryLogger');
+
 function queryLogger (req, res, next) {
-  console.info('%s %s', req.method, req.url);
+  logger.trace('%s %s', req.method, req.url);
   next();
 }
 

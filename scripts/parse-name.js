@@ -1,7 +1,9 @@
 'use strict';
 
 const last           = require('lodash/last'),
-      upperCaseFirst = require('upper-case-first');
+      upperCaseFirst = require('upper-case-first'),
+      log4js         = require('log4js'),
+      logger         = log4js.getLogger('parseName');
 
 function parseName (rawName) {
   const words      = rawName.split(' '),
@@ -12,6 +14,8 @@ function parseName (rawName) {
     || words.length > 3
     || words.length > 3
   ) {
+    logger.error('Fail');
+    logger.debug('rawName', rawName);
     throw new Error('Invalid fullname');
   } else {
     const firstname  = words.length > 1
