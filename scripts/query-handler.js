@@ -13,8 +13,7 @@ function queryHandler (req, res) {
   } catch (e) {
     switch (e.message) {
       case 'Invalid fullname':
-        res.status(400)
-           .send(e.message);
+        res.send(e.message);
         break;
       default:
         console.error('Fail', e, e.message);
